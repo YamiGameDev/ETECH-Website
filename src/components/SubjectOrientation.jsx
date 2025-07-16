@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { subjectDescription, lessonScope, gradingSystem, courseExpectations } from '../data/subjectData';
+import { subjectDescription, lessonScope, gradingSystem, courseExpectations, professorInfo } from '../data/subjectData';
 import './SubjectOrientation.css';
 
 const SubjectOrientation = () => {
@@ -99,6 +99,27 @@ const SubjectOrientation = () => {
           </div>
         </div>
 
+        <div className="about-section">
+          <h3>About Empowerment Technology</h3>
+          <div className="about-content-cards">
+            <div className="about-card">
+              <div className="about-icon">🎓</div>
+              <h4>Educational Framework</h4>
+              <p>{subjectDescription.aboutContent.overview}</p>
+            </div>
+            <div className="about-card">
+              <div className="about-icon">🛠️</div>
+              <h4>Learning Approach</h4>
+              <p>{subjectDescription.aboutContent.approach}</p>
+            </div>
+            <div className="about-card">
+              <div className="about-icon">🚀</div>
+              <h4>Our Methodology</h4>
+              <p>{subjectDescription.aboutContent.methodology}</p>
+            </div>
+          </div>
+        </div>
+
         <div className="expectations-section">
           <h3>Course Expectations</h3>
           <div className="expectations-grid">
@@ -109,6 +130,112 @@ const SubjectOrientation = () => {
                 <p>{expectation.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderProfessorInfo = () => {
+    return (
+      <div className="professor-info">
+        <div className="professor-header">
+          <div className="professor-card">
+            <div className="professor-avatar">
+              <img 
+                src={professorInfo.image} 
+                alt={professorInfo.name}
+                onError={(e) => {
+                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjNjY3ZWVhIi8+Cjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjQwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+OrjwvdGV4dD4KPHN2Zz4K';
+                }}
+              />
+              <div className="professor-status">
+                <span className="status-dot online"></span>
+                <span className="status-text">Online</span>
+              </div>
+            </div>
+            <div className="professor-details">
+              <h3 className="professor-name">{professorInfo.name}</h3>
+              <p className="professor-title">{professorInfo.title}</p>
+              <div className="professor-quote">
+                <span className="quote-icon">💬</span>
+                <p>{professorInfo.gamingQuote}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="professor-content">
+          <div className="education-section">
+            <h4 className="section-title">
+              <span className="title-icon">🎓</span>
+              Educational Background
+            </h4>
+            <div className="education-cards">
+              {professorInfo.educationalBackground.map((edu, index) => (
+                <div key={index} className={`education-card ${edu.level.toLowerCase()}`}>
+                  <div className="education-icon">{edu.icon}</div>
+                  <div className="education-content">
+                    <h5>{edu.degree}</h5>
+                    {edu.major && <p className="education-major">{edu.major}</p>}
+                    <span className="education-level">{edu.level}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="expertise-section">
+            <h4 className="section-title">
+              <span className="title-icon">⚡</span>
+              Skill Tree
+            </h4>
+            <div className="skills-grid">
+              {professorInfo.expertise.map((skill, index) => (
+                <div key={index} className="skill-card">
+                  <div className="skill-header">
+                    <span className="skill-icon">{skill.icon}</span>
+                    <h5>{skill.skill}</h5>
+                    <span className="skill-level">Lv. {skill.level}</span>
+                  </div>
+                  <div className="skill-bar">
+                    <div 
+                      className="skill-progress" 
+                      style={{width: `${skill.level}%`}}
+                    ></div>
+                  </div>
+                  <p className="skill-description">{skill.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="achievements-section">
+            <h4 className="section-title">
+              <span className="title-icon">🏆</span>
+              Achievements Unlocked
+            </h4>
+            <div className="achievements-grid">
+              {professorInfo.achievements.map((achievement, index) => (
+                <div key={index} className={`achievement-card ${achievement.rarity}`}>
+                  <div className="achievement-glow"></div>
+                  <div className="achievement-icon">{achievement.icon}</div>
+                  <h5>{achievement.title}</h5>
+                  <p>{achievement.description}</p>
+                  <div className="rarity-badge">{achievement.rarity}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="philosophy-section">
+            <h4 className="section-title">
+              <span className="title-icon">🎯</span>
+              Teaching Philosophy
+            </h4>
+            <div className="philosophy-card">
+              <p>{professorInfo.teachingPhilosophy}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -139,7 +266,7 @@ const SubjectOrientation = () => {
     <section className="subject-orientation" id="orientation">
       <div className="container">
         <div className="orientation-header">
-          <h2 className="section-title">Subject Orientation</h2>
+          <h2 className="section-title">About</h2>
           <p className="section-subtitle">Everything you need to know about Empowerment Technology</p>
         </div>
 
@@ -165,6 +292,13 @@ const SubjectOrientation = () => {
             <span className="tab-icon">📊</span>
             Grading System
           </button>
+          <button 
+            className={`tab-btn ${activeTab === 'professor' ? 'active' : ''}`}
+            onClick={() => setActiveTab('professor')}
+          >
+            <span className="tab-icon">🎮</span>
+            Professor Info
+          </button>
         </div>
 
         <div className="tab-content">
@@ -176,6 +310,7 @@ const SubjectOrientation = () => {
               {renderGradingScale()}
             </div>
           )}
+          {activeTab === 'professor' && renderProfessorInfo()}
         </div>
       </div>
     </section>

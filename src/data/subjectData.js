@@ -1,6 +1,11 @@
 export const subjectDescription = {
   title: "Empowerment Technology",
   description: "At the end of the course, the students must gain a solid understanding of how technology can be used for personal and professional growth.",
+  aboutContent: {
+    overview: "Empowerment Technology is a comprehensive educational framework designed to equip learners with essential 21st-century digital skills. Our curriculum bridges the gap between traditional education and the rapidly evolving technological landscape.",
+    approach: "Through hands-on learning experiences, real-world projects, and industry-relevant applications, students develop not just technical competencies but also critical thinking skills necessary for digital citizenship and future career success.",
+    methodology: "Our approach emphasizes practical application, ethical technology use, and innovative problem-solving to prepare students for an increasingly digital world."
+  },
   objectives: [
     "Develop digital literacy skills essential for the 21st century",
     "Understand ethical implications of technology use",
@@ -121,6 +126,68 @@ export const gradingSystem = {
     { range: "75-79", grade: "Fairly Satisfactory", description: "Below average but passing" },
     { range: "Below 75", grade: "Did Not Meet Expectations", description: "Failing grade" }
   ]
+};
+
+export const professorInfo = {
+  name: "Joshua C. Oriondo",
+  title: "Professor - Empowerment Technology",
+  image: "/src/assets/Oriondo_Grad.jpg", // You can update this path when you upload the actual image
+  educationalBackground: [
+    {
+      degree: "BS Entertainment and Multimedia Computing",
+      major: "Major in Game Development",
+      level: "Undergraduate",
+      icon: "🎮"
+    },
+    {
+      degree: "Master in Information Technology",
+      major: "",
+      level: "Graduate",
+      icon: "🎓"
+    }
+  ],
+  expertise: [
+    {
+      skill: "Game Development",
+      level: 95,
+      icon: "🎮",
+      description: "Expert in game design, mechanics, and interactive entertainment"
+    },
+    {
+      skill: "Web Development",
+      level: 90,
+      icon: "🌐",
+      description: "Full-stack development and modern web technologies"
+    },
+    {
+      skill: "Animation",
+      level: 85,
+      icon: "🎬",
+      description: "2D/3D animation and multimedia content creation"
+    }
+  ],
+  achievements: [
+    {
+      title: "Game Development Master",
+      description: "Expert in creating engaging interactive experiences",
+      icon: "🏆",
+      rarity: "legendary"
+    },
+    {
+      title: "Tech Education Leader",
+      description: "Inspiring the next generation of digital creators",
+      icon: "🎯",
+      rarity: "epic"
+    },
+    {
+      title: "Innovation Catalyst",
+      description: "Bridging technology and creative expression",
+      icon: "⚡",
+      rarity: "rare"
+    }
+  ],
+  gamingQuote: "\"Technology is best when it brings people together and empowers creativity.\"",
+  teachingPhilosophy: "Combining technical expertise with creative passion to guide students through their digital transformation journey."
 };
 
 export const courseExpectations = [
