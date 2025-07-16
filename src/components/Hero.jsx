@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="particle" style={{top: '50%', left: '50%'}}></div>
       
       <div className="hero-content">
-        <h1>Empowerment Technology</h1>
+        <h1>Empowerment Technologies</h1>
         <p>Transform your digital skills and unlock the power of technology to shape the future. Learn, create, and innovate with cutting-edge tools and methodologies.</p>
         <a href="#assessment" className="cta-button" onClick={handleCTAClick}>
           Test Your Knowledge

@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import PreAssessment from './components/PreAssessment';
+import SubjectOrientation from './components/SubjectOrientation';
 import Features from './components/Features';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -12,6 +13,7 @@ function App() {
       <Navigation />
       <Hero />
       <PreAssessment />
+      <SubjectOrientation />
       <Features />
       <About />
       <Footer />
